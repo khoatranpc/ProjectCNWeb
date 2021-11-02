@@ -1,0 +1,150 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace
+}
+html, body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+.container{
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0,0.2)),url('/assets/bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.form-login{
+    background-color: rgba(14, 14, 14, 0.5);
+    width: 425px;
+    height: 60%;
+    border-radius:20px; 
+    color: white;
+}
+form{
+    padding: 2rem 3rem;
+}
+span{
+    font-size: 20px;
+}
+input{
+    width: 100%;
+    height: 2em;
+    font-size: 20px;
+    margin:10px 0; 
+    border-radius: 5px;
+}
+form label{
+    color: rgb(241, 109, 109);
+}
+button{
+    padding: 1rem;
+    border: hidden;
+    border-radius: 10px; 
+    font-size: 15px;
+    box-shadow: 0 0 10px rgba(91, 152, 250, 0.1);
+    transform: scale(0.95);
+    transition: 0.5s;
+    color: white;
+    font-weight: bold;
+}
+ button.login{
+    background-color: rgb(15, 117, 235);
+}
+button:hover{
+    cursor: pointer;
+}
+form button.login:active{
+    box-shadow: 0 0 10px rgba(91, 152, 250, 0.5);
+    transform: scale(1);
+}
+
+a.btn-login{
+    text-decoration: none;
+    color: white;
+    background-color: rgb(15, 117, 235);
+    padding: 1rem;
+    position: relative;
+    float: left;
+    border-radius: 10px;
+    transform: scale(0.95);
+    transition: 0.5s;
+}
+a.btn-login:active{
+    box-shadow: 0 0 10px rgba(91, 152, 250, 0.5);
+    transform: scale(1);
+}
+ a.btn-reg{
+    text-decoration: none;
+    color: white;
+    background-color: rgb(228, 64, 64);
+    padding: 1rem;
+    position: relative;
+    float: right;
+    border-radius: 10px;
+    transform: scale(0.95);
+    transition: 0.5s;
+}
+a.btn-reg:active{
+    transform: scale(1);
+    box-shadow: 0 0 10px rgb(226, 83, 83);
+}
+/* Form regsiter */
+.sex{
+    display: flex;
+    vertical-align: middle;
+    align-items: center;
+}
+#nam,#nu{
+    width:1rem;
+    margin: 0 10px;
+    height: auto;
+}
+.form-reg{
+    background-color: rgba(14, 14, 14, 0.5);
+    border-radius:20px; 
+    padding: 2rem 0;
+    color: white;
+}
+div.table-row table{
+    display: flex;
+    text-align: left;
+    border-spacing: 0.85rem;
+}
+tr.tr-sex td{
+  display: inline;
+}
+th{
+    font-size: 1em;
+    font-weight: bolder;
+}
+div.btn{
+    padding: 0 1rem;
+}
+div.btn button.reg{
+    text-decoration: none;
+    color: white;
+    background-color: rgb(228, 64, 64);
+    padding: 1rem;
+    float: right;
+    border-radius: 10px;
+    transform: scale(0.95);
+    transition: 0.5s;
+}
+div.btn button.reg:active{
+    transform: scale(1);
+    box-shadow: 0 0 10px rgb(226, 83, 83);
+}
+td.round-sex div{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    border: 1px solid rgb(255, 255, 255);
+}

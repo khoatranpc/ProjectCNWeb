@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Login;
+use App\Http\Controllers\Register;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -49,3 +50,10 @@ Route::get('/logout', function () {
     }
     return redirect('login');
 });
+//Hiển thị register
+Route::get('/registerAccount',function (){
+    return view('register');
+});
+//Khi method post lên /register thì sẽ thực thi checkvalid
+Route::post('/register', [Register::class,'viewReg']);
+
