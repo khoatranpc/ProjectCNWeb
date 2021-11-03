@@ -54,6 +54,13 @@ Route::get('/logout', function () {
 Route::get('/registerAccount',function (){
     return view('register');
 });
+//remove session khi chuyen qua vao registerAccount
+Route::get('/register', function () {
+    if(session()->has('acc')){
+        session()->forget('acc');
+    }
+    return redirect('registerAccount');
+});
 //Khi method post lên /register thì sẽ thực thi checkvalid
 Route::post('/register', [Register::class,'viewReg']);
 

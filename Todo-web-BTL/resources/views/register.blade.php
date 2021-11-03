@@ -46,11 +46,11 @@
                 </tr>
                 <tr>
                     <td class="round-sex">
-                        <div>
+                        <div >
                             <input type="radio" name="sex" id="nam" value="nam"> <span>Nam</span>
                             <input type="radio" name="sex" id="nu" value="nu"> <span>Nữ</span>
-                            <br>
                         </div>
+        
                         <label>@error('sex'){{$message}}@enderror</label>
                     </td>
                     <td>

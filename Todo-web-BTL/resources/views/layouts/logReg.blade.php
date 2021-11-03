@@ -9,11 +9,7 @@
 </head>
 <body>
     <div class="container">
-       
            @yield('form')
     </div>
 </body>
 </html>
-<style>
-
-</style>
