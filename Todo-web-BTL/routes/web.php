@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Login;
+use App\Http\Controllers\Admin;
 use App\Http\Controllers\Register;
 /*
 |--------------------------------------------------------------------------
@@ -42,7 +43,14 @@ Route::get('/login', function () {
     }
     return view('login');
 });
-
+Route::get('/login', function () {
+    if(session()->has('acc')){
+        return redirect('admin');
+    }
+    return view('login');
+});
+Route::get('/admin', [Admin::class,'viewPage']);
+// Route::get('/admin','adminpage');
 //remove session khi bấm logout
 Route::get('/logout', function () {
     if(session()->has('acc')){
@@ -63,4 +71,5 @@ Route::get('/register', function () {
 });
 //Khi method post lên /register thì sẽ thực thi checkvalid
 Route::post('/register', [Register::class,'viewReg']);
+
 
