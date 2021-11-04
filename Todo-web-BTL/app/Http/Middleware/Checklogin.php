@@ -26,17 +26,8 @@ class Checklogin
         // check login
         $checklogin = DB::table('useraccount')->where(['acc'=>$acc,'password'=>$password])->get();
         if(count($checklogin) > 0){
-            $roleAcc = DB::select('SELECT `role` FROM `useraccount` WHERE `acc` = ?',[$acc]);
-            foreach($roleAcc as $checkrole){
-                if($checkrole->role == 1){
-                    $request->session()->put('acc',$acc);
-                    return redirect('profile');
-                }else {
-                    $request->session()->put('acc',$acc);
-                    return redirect('admin');
-                }
-             
-            }
+            $request->session()->put('acc',$acc);
+            return redirect('profile');
         }
         else return redirect('login');
       
