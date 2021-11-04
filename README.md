@@ -13,7 +13,7 @@ B6: Chạy lệnh npm run dev
 -----
 B7: Copy nội dung file .env.example
 -----
-B8: Tạo 1 một thư mục .env có cấp cùng file .env.example và past nội dung vừa copy
+B8: Tạo 1 một thư mục .env có cấp cùng file .env.example và paste nội dung vừa copy, chỉnh sửa dòng 14 laravel->todo
 -----
 B9: Chạy lệnh php artisan key:generate
 -----
