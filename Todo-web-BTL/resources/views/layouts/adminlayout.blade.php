@@ -9,8 +9,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="{{ assets('favicon.ico') }}">
-    <link rel="icon" type="image/png" href="{{ assets('favicon.png') }}">
+    <link rel="shortcut icon" href="/assets/favicon.io">
+    <link rel="icon" type="image/png" href="/assets/favicon.io">
     <title>Admin</title>
 </head>
 <body>
