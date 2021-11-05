@@ -2,10 +2,10 @@
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 03, 2021 lúc 04:20 AM
--- Phiên bản máy phục vụ: 10.4.21-MariaDB
--- Phiên bản PHP: 8.0.11
+-- Host: 127.0.0.1
+-- Generation Time: Nov 04, 2021 at 05:07 PM
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 8.0.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `todo`
+-- Database: `todo`
 --
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `inforuser`
+-- Table structure for table `inforuser`
 --
 
 CREATE TABLE `inforuser` (
@@ -39,17 +39,24 @@ CREATE TABLE `inforuser` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Đang đổ dữ liệu cho bảng `inforuser`
+-- Dumping data for table `inforuser`
 --
 
 INSERT INTO `inforuser` (`IDuser`, `Hoten`, `Gioitinh`, `Ngaysinh`, `Hinhanh`, `SDT`, `Email`, `acc`) VALUES
 (1, 'Tran Dang Khoa', 'Nam', '2001-12-21', 'img', 12345, 'khoa@gmail.com', 'khoa'),
-(2, 'huong', 'Nữ', '2001-07-23', 'img', 2631, 'huong@gmail.com', 'khoahuong');
+(2, 'huong', 'Nữ', '2001-07-23', 'img', 2631, 'huong@gmail.com', 'khoahuong'),
+(3, 'Trần Đăng Khoa', 'nam', '2021-11-03', 'hinhanhcuatui', 353923603, 'abc@gmaill.com', 'test1'),
+(5, 'Trần Đăng Khoa', 'nu', '2021-11-03', 'hinhanhcuatui', 353923603, 'khoatranpc603@moet.edu.vn', 'test2'),
+(6, 'Hàng sắp về', 'nu', '2021-11-03', 'hinhanhcuatui', 353923603, 'khoatranpc603@moet.edu.vn', 'test3'),
+(7, 'Trần Đăng Khoa', 'nu', '2021-11-03', 'https://www.imgacademy.com/themes/custom/imgacademy/images/helpbox-contact.jpg', 353923603, 'TNT@email.com', 'test4'),
+(8, 'Trần Đăng Khoa', 'nu', '2021-11-03', 'https://www.imgacademy.com/themes/custom/imgacademy/images/helpbox-contact.jpg', 353923603, 'khoatranpc603@moet.edu.vn', 'qwe'),
+(9, 'Người dùng mới', 'nu', '2021-11-04', 'aaâ', 389922221, 'khoatranpc603@gmail.com', 'ngdung12'),
+(10, 'Trần Đăng Khoa', 'nam', '2021-11-04', 'hinhanhcuatui', 353923603, 'bluepan2206@gmail.com', 'test');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `schedule`
+-- Table structure for table `schedule`
 --
 
 CREATE TABLE `schedule` (
@@ -60,7 +67,7 @@ CREATE TABLE `schedule` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Đang đổ dữ liệu cho bảng `schedule`
+-- Dumping data for table `schedule`
 --
 
 INSERT INTO `schedule` (`Idschedule`, `Nameschedule`, `Thoigian`, `IDuser`) VALUES
@@ -70,7 +77,7 @@ INSERT INTO `schedule` (`Idschedule`, `Nameschedule`, `Thoigian`, `IDuser`) VALU
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `useraccount`
+-- Table structure for table `useraccount`
 --
 
 CREATE TABLE `useraccount` (
@@ -80,66 +87,74 @@ CREATE TABLE `useraccount` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Đang đổ dữ liệu cho bảng `useraccount`
+-- Dumping data for table `useraccount`
 --
 
 INSERT INTO `useraccount` (`role`, `acc`, `password`) VALUES
+(2, 'admin', '1'),
 (1, 'khoa', '123'),
 (1, 'khoahuong', '123'),
-(1, 'myacc', '567');
+(1, 'myacc', '567'),
+(1, 'ngdung12', '3333'),
+(1, 'qwe', '2d122ww'),
+(1, 'test', '222'),
+(1, 'test1', '1232'),
+(1, 'test2', '123'),
+(1, 'test3', '2332'),
+(1, 'test4', '12323231');
 
 --
--- Chỉ mục cho các bảng đã đổ
+-- Indexes for dumped tables
 --
 
 --
--- Chỉ mục cho bảng `inforuser`
+-- Indexes for table `inforuser`
 --
 ALTER TABLE `inforuser`
   ADD PRIMARY KEY (`IDuser`),
   ADD KEY `userwithacc` (`acc`);
 
 --
--- Chỉ mục cho bảng `schedule`
+-- Indexes for table `schedule`
 --
 ALTER TABLE `schedule`
   ADD PRIMARY KEY (`Idschedule`),
   ADD KEY `userwithschedule` (`IDuser`);
 
 --
--- Chỉ mục cho bảng `useraccount`
+-- Indexes for table `useraccount`
 --
 ALTER TABLE `useraccount`
   ADD PRIMARY KEY (`acc`);
 
 --
--- AUTO_INCREMENT cho các bảng đã đổ
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT cho bảng `inforuser`
+-- AUTO_INCREMENT for table `inforuser`
 --
 ALTER TABLE `inforuser`
-  MODIFY `IDuser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `IDuser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT cho bảng `schedule`
+-- AUTO_INCREMENT for table `schedule`
 --
 ALTER TABLE `schedule`
   MODIFY `Idschedule` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- Các ràng buộc cho các bảng đã đổ
+-- Constraints for dumped tables
 --
 
 --
--- Các ràng buộc cho bảng `inforuser`
+-- Constraints for table `inforuser`
 --
 ALTER TABLE `inforuser`
   ADD CONSTRAINT `userwithacc` FOREIGN KEY (`acc`) REFERENCES `useraccount` (`acc`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Các ràng buộc cho bảng `schedule`
+-- Constraints for table `schedule`
 --
 ALTER TABLE `schedule`
   ADD CONSTRAINT `userwithschedule` FOREIGN KEY (`IDuser`) REFERENCES `inforuser` (`IDuser`) ON DELETE CASCADE ON UPDATE CASCADE;
