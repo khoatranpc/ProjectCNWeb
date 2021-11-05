@@ -44,7 +44,7 @@
           </div>
           <div class="tab-control">
             <ul class="m-0 xxl">
-              <li id="user-info" onclick="tabClick()">
+              <li style="background-color: #537b35" id="user-info" onclick="tabClick()">
                 <span class="name-user">User Information</span>
               </li>
                 <a class="schedule" href="/schedule">

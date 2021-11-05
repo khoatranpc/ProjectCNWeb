@@ -35,30 +35,10 @@ class Register extends Controller
         $birth= $req->input('birth');
        
         // $insertACC = 
-        // $checkacc = DB::select('SELECT `acc` FROM `useraccount` WHERE `acc` = ?',[$acc]);
-        // if(count($checkacc) > 0){
-        //     return redirect('login');
-        // }
-        // else{
-
-        // }
-        try{
-            if(session()->has('er')){
-                session()->forget('er');
-            }
-            DB::insert('INSERT INTO `useraccount` (`acc`, `password`) values (?, ?)', [$acc, $password]);
-            $birth = date('d-m-Y');
-            DB::insert('INSERT INTO `inforuser` (`Hoten`, `Gioitinh`, `Ngaysinh`, `Hinhanh`, `SDT`, `Email`, `acc`) values (?, ?, ?, ?, ?,?,?)', [$name,$sex,Carbon::createFromFormat('d-m-Y', $birth)->format('Y-m-d'),$img,$sdt,$email,$acc]);
-            return redirect('login');
-        }catch(\Exception $ex){
-            $checkacc = DB::select('SELECT `acc` FROM `useraccount` WHERE `acc` = ?',[$acc]);
-            if(count($checkacc) > 0){
-                session('er','This Account has been us!');
-                return redirect('registerAccount');
-            }
-            
-        }
+        DB::insert('INSERT INTO `useraccount` (`acc`, `password`) values (?, ?)', [$acc, $password]);
         // // $insertInfUser =  
-        
+        $birth = date('d-m-Y');
+        DB::insert('INSERT INTO `inforuser` (`Hoten`, `Gioitinh`, `Ngaysinh`, `Hinhanh`, `SDT`, `Email`, `acc`) values (?, ?, ?, ?, ?,?,?)', [$name,$sex,Carbon::createFromFormat('d-m-Y', $birth)->format('Y-m-d'),$img,$sdt,$email,$acc]);
+        return redirect('login');
     }
 }
