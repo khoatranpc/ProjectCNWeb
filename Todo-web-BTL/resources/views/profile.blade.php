@@ -1,8 +1,5 @@
 @extends('layouts.profile')
-@section('profile')
-<div  class="on-dentail-tab p-4">
-          <div class="profile">
-            <div>
+@section('profile')  
               <form>
                 <div class="text-center">
                   <img id="img-user" src="{{$inf->Hinhanh}}" alt="..." class="img-thumbnail">
@@ -44,8 +41,5 @@
                     <label for="inputEmailaddress">Email address</label>
                     <input type="text" class="form-control" placeholder="..." value="{{$inf->Email}}" readonly>
                   </div>
-                </div>
             </form>
-        </div>
-    </div>
 @endsection

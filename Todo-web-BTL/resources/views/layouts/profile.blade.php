@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="index.css" />
-    <link rel="stylesheet" href="./assets/css/profile.css">
-    
+    {{-- <link rel="stylesheet" href="./assets/css/profile.css"> --}}
+    <link rel="stylesheet" href="{{URL::to('assets/css/profile.css')}}">
     <link
       rel="icon"
       href="../ProjectCNWeb/assets/favicon.ico"
@@ -55,8 +55,13 @@
             </ul>
           </div>
           <div class="dentails-tab">
-            @yield('profile')
-        </div>
+            <div class="on-dentail-tab p-4">
+              <div class="profile">      
+                @yield('profile')
+              </div>
+            </div>
+          </div>
+       
       </div>
     </div> 
     
