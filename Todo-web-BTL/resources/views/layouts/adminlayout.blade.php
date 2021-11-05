@@ -40,8 +40,12 @@
     }
  
     .back-video{
-        position: absolute;
+        position: fixed;
         z-index: -10;
+    }
+    video{
+        min-width: 100%;
+        min-height: 100%
     }
 </style>
 </html>

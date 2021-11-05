@@ -74,3 +74,9 @@ Route::get('/schedule', function () {
         return view('schedule');
     }
 });
+//view schedule details hang
+Route::get('/schedule/details', function () {
+    if(session()->has('acc')){
+        return view('scheduledetails');
+    }
+});
