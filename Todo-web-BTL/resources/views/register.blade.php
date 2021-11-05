@@ -22,9 +22,6 @@
                         <input type="text" name="acc" id="">
                         <br>
                         <label>@error('acc'){{$message}}@enderror</label>
-                       @if (session()->has('er'))
-                           {{session()->get('er')}}
-                       @endif
                     </td>
                 </tr>
                 <tr>
