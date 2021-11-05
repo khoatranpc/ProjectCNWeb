@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Login;
+use App\Http\Controllers\Admin;
+use App\Http\Controllers\Register;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,17 +31,11 @@ Route::post('/user',[Login::class,'checkValid'])->middleware('checklogin');
 
 Route::get('/profile', function () {
     if(session()->has('acc')){
-        return view('profileuser');
+        return view('profile');
     }
     // return view('test');
 });
-//view schedule
-Route::get('/schedule', function () {
-    if(session()->has('acc')){
-        return view('schedule');
-    }
-    // return view('test');
-});
+
 //check session tồn tại 
 Route::get('/login', function () {
     if(session()->has('acc')){
@@ -47,7 +43,14 @@ Route::get('/login', function () {
     }
     return view('login');
 });
-
+Route::get('/login', function () {
+    if(session()->has('acc')){
+        return redirect('admin');
+    }
+    return view('login');
+});
+Route::get('/admin', [Admin::class,'viewPage']);
+// Route::get('/admin','adminpage');
 //remove session khi bấm logout
 Route::get('/logout', function () {
     if(session()->has('acc')){
@@ -55,4 +58,18 @@ Route::get('/logout', function () {
     }
     return redirect('login');
 });
+//Hiển thị register
+Route::get('/registerAccount',function (){
+    return view('register');
+});
+//remove session khi chuyen qua vao registerAccount
+Route::get('/register', function () {
+    if(session()->has('acc')){
+        session()->forget('acc');
+    }
+    return redirect('registerAccount');
+});
+//Khi method post lên /register thì sẽ thực thi checkvalid
+Route::post('/register', [Register::class,'viewReg']);
+
 
