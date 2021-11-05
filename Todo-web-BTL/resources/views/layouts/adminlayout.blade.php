@@ -15,7 +15,7 @@
 </head>
 <body>
     <div class="back-video">
-        <video autoplay loop muted>
+        <video autoplay loop muted >
             <source src="/assets/4k.mp4" type="video/mp4">
         </video>
     </div>
@@ -40,8 +40,14 @@
     }
  
     .back-video{
-        position: absolute;
+        position: fixed;
         z-index: -10;
+        width: 100%;
+    
+    }
+    video{
+        min-width: 100%; 
+        min-height: 100%;
     }
 </style>
 </html>

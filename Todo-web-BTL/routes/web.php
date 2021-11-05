@@ -4,7 +4,6 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Login;
 use App\Http\Controllers\Admin;
 use App\Http\Controllers\Register;
-use App\Http\Controllers\InforUser;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -30,7 +29,12 @@ Route::post('/user',[Login::class,'checkValid'])->middleware('checklogin');
 
 // Route::view('/test','test');
 
-Route::get('/profile',[InforUser::class,'profileuser'] );
+Route::get('/profile', function () {
+    if(session()->has('acc')){
+        return view('profile');
+    }
+    // return view('test');
+});
 
 //check session tồn tại 
 Route::get('/login', function () {
@@ -68,9 +72,4 @@ Route::get('/register', function () {
 //Khi method post lên /register thì sẽ thực thi checkvalid
 Route::post('/register', [Register::class,'viewReg']);
 
-//view shedule tan
-Route::get('/schedule', function () {
-    if(session()->has('acc')){
-        return view('schedule');
-    }
-});
+
