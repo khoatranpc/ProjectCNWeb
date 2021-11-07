@@ -29,12 +29,16 @@ Route::post('/user',[Login::class,'checkValid'])->middleware('checklogin');
 // });
 
 // Route::view('/test','test');
+Route::get('/login/Check=false',function(){
+    return view('login',['checking'=>'Wrong account or password!']);
+})->middleware('checklogin');
 
 Route::get('/profile',[InforUser::class,'profileuser'] );
 
 //check session tồn tại 
 Route::get('/login', function () {
     if(session()->has('acc')){
+     
         return redirect('profile');
     }
     return view('login');
@@ -80,3 +84,5 @@ Route::get('/schedule/details', function () {
         return view('scheduledetails');
     }
 });
+//Features Admin Search User
+Route::get('/admin/searchuser',[Admin::class,'searchuser'])->name('searchuserinfor');

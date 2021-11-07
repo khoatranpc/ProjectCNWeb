@@ -34,11 +34,19 @@ class Register extends Controller
         $email= $req->input('email');
         $birth= $req->input('birth');
        
+   
         // $insertACC = 
-        DB::insert('INSERT INTO `useraccount` (`acc`, `password`) values (?, ?)', [$acc, $password]);
-        // // $insertInfUser =  
-        $birth = date('d-m-Y');
-        DB::insert('INSERT INTO `inforuser` (`Hoten`, `Gioitinh`, `Ngaysinh`, `Hinhanh`, `SDT`, `Email`, `acc`) values (?, ?, ?, ?, ?,?,?)', [$name,$sex,Carbon::createFromFormat('d-m-Y', $birth)->format('Y-m-d'),$img,$sdt,$email,$acc]);
-        return redirect('login');
+        $checkacc = DB::table('useraccount')->where(['acc'=>$acc])->get();
+        if(count($checkacc) > 0){
+            return redirect()->back()->with('hasAcc','This name account has been used!');
+        }else{
+            session()->forget('hasAcc');
+            DB::insert('INSERT INTO `useraccount` (`acc`, `password`) values (?, ?)', [$acc, $password]);
+            // // $insertInfUser =  
+            $birth = date('d-m-Y');
+            DB::insert('INSERT INTO `inforuser` (`Hoten`, `Gioitinh`, `Ngaysinh`, `Hinhanh`, `SDT`, `Email`, `acc`) values (?, ?, ?, ?, ?,?,?)', [$name,$sex,Carbon::createFromFormat('d-m-Y', $birth)->format('Y-m-d'),$img,$sdt,$email,$acc]);
+            return redirect('login');
+        }
+     
     }
 }

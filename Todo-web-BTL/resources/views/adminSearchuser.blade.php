@@ -29,7 +29,7 @@
     }
 </style>
     <div class="manager">
-  
+      
           <div class="table-user">
             
             <table class="table">
@@ -43,7 +43,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                    @foreach ($user as $users)
+                    @foreach ($userinf as $users)
                     <tr>
                         <th scope="row">{{$users['IDuser']}}</th>
                         <td>{{$users['Hoten']}}</td>
@@ -55,9 +55,10 @@
                 </tbody>
               </table>
           </div>
-          <div class="footer-table">
-            {{$user->links()}}
-            </div>
+          <div class="footer-table" style=>
+            <strong>---Tìm thấy {{count($userinf)}} kết quả---</strong>
+            <span style="position: absolute; right: 0"><a href="/admin">Kết thúc tìm kiếm</a></span>
+          </div>
         </div>
     </div>
 <script>
