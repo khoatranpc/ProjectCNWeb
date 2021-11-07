@@ -24,7 +24,13 @@
         <div class="header">
             <h1 class="text-center">Hello Admin! Welcome to Manager User System</h1>
         </div>
-        
+
+            <form action="{{route('searchuserinfor')}}" method="GET" style="display: flex">
+                <input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)" placeholder="Tìm kiếm theo tên, email" name="key">
+                <button class="input-group-text">Tìm kiếm</button>
+            </form>
+            
+
         @yield('admin')
     </div>
 </body>
@@ -40,12 +46,14 @@
     }
  
     .back-video{
+        display: block;
         position: fixed;
         z-index: -10;
     }
     video{
         min-width: 100%;
-        min-height: 100%
+        max-height: 100%;
+        
     }
 </style>
 </html>

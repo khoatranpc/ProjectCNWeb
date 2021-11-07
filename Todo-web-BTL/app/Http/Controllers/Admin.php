@@ -7,16 +7,25 @@ use Illuminate\Http\Request;
 class Admin extends Controller
 {
     //
-function viewPage()
+    function viewPage()
     {
         # code...
-  
-            if(session()->has('acc')){
-                $data = Inforuser::paginate(5);
-                return view('adminpage',['user'=>$data]);
-            }
-            else return redirect('login');
-     
-     
+        if(session()->has('acc')){
+            $data = Inforuser::paginate(5);
+            return view('adminpage',['user'=>$data]);
+        }
+        else return redirect('login');
+            
     }
+    function searchuser(Request $req){
+        if(session()->has('acc')){
+           $userinf = Inforuser::where('Hoten','like','%'.$req->key.'%')
+                                ->orWhere('SDT','like','%'.$req->key.'%')
+                                ->get();
+            return view('adminSearchUser',compact('userinf'));
+        }
+        else return redirect('login');
+            
+    }
+ 
 }

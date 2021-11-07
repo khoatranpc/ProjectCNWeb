@@ -26,6 +26,7 @@ class Checklogin
         // check login
         $checklogin = DB::table('useraccount')->where(['acc'=>$acc,'password'=>$password])->get();
         if(count($checklogin) > 0){
+            session()->forget('error');
             $roleAcc = DB::select('SELECT `role` FROM `useraccount` WHERE `acc` = ?',[$acc]);
             foreach($roleAcc as $checkrole){
                 if($checkrole->role == 1){
@@ -38,7 +39,8 @@ class Checklogin
              
             }
         }
-        else return redirect('login');
+        else return redirect('login')->with('error','Wrong account or password!');
+        // else return redirect('login/Check=false');
       
         return $next($request);
     }
