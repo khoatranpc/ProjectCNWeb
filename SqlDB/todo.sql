@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 04, 2021 at 05:07 PM
+-- Generation Time: Nov 09, 2021 at 07:40 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.11
 
@@ -43,7 +43,7 @@ CREATE TABLE `inforuser` (
 --
 
 INSERT INTO `inforuser` (`IDuser`, `Hoten`, `Gioitinh`, `Ngaysinh`, `Hinhanh`, `SDT`, `Email`, `acc`) VALUES
-(1, 'Tran Dang Khoa', 'Nam', '2001-12-21', 'img', 12345, 'khoa@gmail.com', 'khoa'),
+(1, 'Tran Dang Khoa', 'Nam', '2001-12-21', 'https://scontent.fhan5-8.fna.fbcdn.net/v/t1.6435-9/84603495_1019667378416433_913321054577885184_n.jpg?_nc_cat=110&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=PNWOM4a0qB8AX_n2bnc&_nc_ht=scontent.fhan5-8.fna&oh=5fd20a50eb9c8fdc5e1a45e07ebceab4&oe=61AFDD60', 12345, 'khoa@gmail.com', 'khoa'),
 (2, 'huong', 'Nữ', '2001-07-23', 'img', 2631, 'huong@gmail.com', 'khoahuong'),
 (3, 'Trần Đăng Khoa', 'nam', '2021-11-03', 'hinhanhcuatui', 353923603, 'abc@gmaill.com', 'test1'),
 (5, 'Trần Đăng Khoa', 'nu', '2021-11-03', 'hinhanhcuatui', 353923603, 'khoatranpc603@moet.edu.vn', 'test2'),
@@ -71,8 +71,11 @@ CREATE TABLE `schedule` (
 --
 
 INSERT INTO `schedule` (`Idschedule`, `Nameschedule`, `Thoigian`, `IDuser`) VALUES
-(1, 'Đi học về nấu cơm', '2021-12-31 23:59:59', 1),
-(2, 'Về nhà để tắm', '2019-02-25 00:00:00', 2);
+(11, 'Test1322 shaco111', '2021-09-22 00:00:00', 1),
+(13, 'tesst29911 shaco111', '2021-09-22 00:00:00', 1),
+(14, 'schedule20112 shaco111', '2021-09-22 00:00:00', 1),
+(18, 'Test 082khaa', '2021-09-12 00:00:00', 1),
+(19, 'Test 09skkkaa', '2021-09-12 00:00:00', 1);
 
 -- --------------------------------------------------------
 
@@ -141,7 +144,7 @@ ALTER TABLE `inforuser`
 -- AUTO_INCREMENT for table `schedule`
 --
 ALTER TABLE `schedule`
-  MODIFY `Idschedule` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `Idschedule` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- Constraints for dumped tables
@@ -152,12 +155,6 @@ ALTER TABLE `schedule`
 --
 ALTER TABLE `inforuser`
   ADD CONSTRAINT `userwithacc` FOREIGN KEY (`acc`) REFERENCES `useraccount` (`acc`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Constraints for table `schedule`
---
-ALTER TABLE `schedule`
-  ADD CONSTRAINT `userwithschedule` FOREIGN KEY (`IDuser`) REFERENCES `inforuser` (`IDuser`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

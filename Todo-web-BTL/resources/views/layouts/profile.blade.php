@@ -44,12 +44,16 @@
           </div>
           <div class="tab-control">
             <ul class="m-0 xxl">
-              <li style="background-color: #537b35" id="user-info" onclick="tabClick()">
-                <span class="name-user">User Information</span>
+              <li  id="user-info">
+                <a href="/profile">
+                  <span class="name-user">User Information</span>
+                </a>
               </li>
                 <a class="schedule" href="/schedule">
-                  <li id="user-schedule" onclick="tabClick()">
-                    <span>Schedule</span>
+                  <li id="user-schedule">
+                    <a href="/schedule">
+                      <span class="name-user">Schedule</span>
+                    </a>
                   </li>
                 </a>
             </ul>

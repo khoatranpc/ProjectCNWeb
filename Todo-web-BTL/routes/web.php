@@ -5,6 +5,7 @@ use App\Http\Controllers\Login;
 use App\Http\Controllers\Admin;
 use App\Http\Controllers\Register;
 use App\Http\Controllers\InforUser;
+use App\Http\Controllers\ScheduleUser;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,8 +17,15 @@ use App\Http\Controllers\InforUser;
 |
 */
 
+
 Route::get('/', function () {
-    return redirect('login');
+    if(session()->has('acc')){
+        return redirect('profile');
+    }
+    else if (session()->has('admin')){
+        return redirect('admin');
+    }
+    else return view('login');
 });
 // Route::get('/test', function () {
 //     return view('test');
@@ -36,27 +44,23 @@ Route::get('/login/Check=false',function(){
 Route::get('/profile',[InforUser::class,'profileuser'] );
 
 //check session tồn tại 
+
 Route::get('/login', function () {
     if(session()->has('acc')){
-     
         return redirect('profile');
     }
-    return view('login');
-});
-Route::get('/login', function () {
-    if(session()->has('acc')){
+    else if (session()->has('admin')){
         return redirect('admin');
     }
-    return view('login');
+    else return view('login');
 });
 Route::get('/admin', [Admin::class,'viewPage']);
 // Route::get('/admin','adminpage');
 //remove session khi bấm logout
 Route::get('/logout', function () {
-    if(session()->has('acc')){
         session()->forget('acc');
-    }
-    return redirect('login');
+        session()->forget('admin');
+        return redirect('login');
 });
 //Hiển thị register
 Route::get('/registerAccount',function (){
@@ -72,12 +76,12 @@ Route::get('/register', function () {
 //Khi method post lên /register thì sẽ thực thi checkvalid
 Route::post('/register', [Register::class,'viewReg']);
 
-//view shedule tan
-Route::get('/schedule', function () {
-    if(session()->has('acc')){
-        return view('schedule');
-    }
-});
+// //view shedule tan
+// Route::get('/schedule', function () {
+//     if(session()->has('acc')){
+//         return view('schedule');
+//     }
+// });
 //view schedule details hang
 Route::get('/schedule/details', function () {
     if(session()->has('acc')){
@@ -86,3 +90,7 @@ Route::get('/schedule/details', function () {
 });
 //Features Admin Search User
 Route::get('/admin/searchuser',[Admin::class,'searchuser'])->name('searchuserinfor');
+//Schedule
+Route::get('/schedule', [ScheduleUser::class,'showSchedule']);
+Route::get('/schedule/delete/{idschedule}', [ScheduleUser::class,'deleteschedule']);
+Route::get('/schedule/searchschedule',[ScheduleUser::class,'searchschedule'])->name('searchschedule');

@@ -31,7 +31,6 @@
     <div class="manager">
       
           <div class="table-user">
-            
             <table class="table">
                 <thead>
                   <tr>

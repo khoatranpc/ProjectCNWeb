@@ -64,12 +64,13 @@ ul{
     padding-left:0 !important;
 }
 li, input{
-    box-shadow: 2px 2px #537b35;
-    border-radius: 1rem !important;
+    /* box-shadow: 2px 2px #537b35; */
+    border-radius: 5px !important;
     border:1px solid #537b35 !important;
 }
 input{
     margin-top: 5px !important;
+    text-align: center;
 }
 label{
     margin-top: 5px !important;

@@ -4,6 +4,10 @@
                 <div class="text-center">
                   <img id="img-user" src="{{$inf->Hinhanh}}" alt="..." class="img-thumbnail">
                 </div>
+                {{-- @if ( session('iduser'))
+                {{session('iduser')}}
+                @endif
+                --}}
                 <div >
                   <div class="form-group text-center " style="padding:0 2rem;"  >
                     <label for="inputUsercode"> 
