@@ -18,8 +18,8 @@
         <div class="table-row">
             <table>
                 <tr>
-                    <th>Họ tên</th>
-                    <th>Tên tài khoản</th>
+                    <th>Name</th>
+                    <th>Name account</th>
                 </tr>
                 <tr>
                     <td>
@@ -36,8 +36,8 @@
                     </td>
                 </tr>
                 <tr>
-                    <th>Ngày sinh</th>
-                    <th>Mật khẩu</th>
+                    <th>Date of birh</th>
+                    <th>Password</th>
                 </tr>
                 <tr>
                     <td>
@@ -53,14 +53,14 @@
                     </td>
                 </tr>
                 <tr>
-                    <th colspan="1">Giới tính</th>
-                    <th colspan="1">Đường dẫn hình ảnh</th>
+                    <th colspan="1">Sex</th>
+                    <th colspan="1">Link url image</th>
                 </tr>
                 <tr>
                     <td class="round-sex">
                         <div >
-                            <input type="radio" name="sex" id="nam" value="nam"> <span>Nam</span>
-                            <input type="radio" name="sex" id="nu" value="nu"> <span>Nữ</span>
+                            <input type="radio" name="sex" id="nam" value="nam"> <span>Male</span>
+                            <input type="radio" name="sex" id="nu" value="nu"> <span>Female</span>
                         </div>
         
                         {{-- <label>@error('sex'){{$message}}@enderror</label> --}}
@@ -73,7 +73,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <th>Số điện thoại</th>
+                    <th>NumberPhone</th>
                     <th>Email</th>
                 </tr>
                 <tr>
@@ -93,8 +93,8 @@
             </table>
         </div>
     <div class="btn">
-        <a href="/login" class="btn-login">Đăng nhập</a>
-        <button class="reg" type="" class="reg">Đăng ký</button>
+        <a href="/login" class="btn-login">Login</a>
+        <button class="reg" type="" class="reg">Keep Signup</button>
     </div>
    </form>
 </div>

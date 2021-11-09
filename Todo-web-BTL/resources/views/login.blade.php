@@ -11,14 +11,14 @@
     @endif
     <form method="POST" action="user">
         @csrf
-        <span>Tài khoản</span> 
+        <span>Account</span> 
         <input type="text" name="account" id="" value="{{old('account')}}">
         <label>@error('account'){{$message}}@enderror</label>
-        <span>Mật khẩu</span>
+        <span>Password</span>
         <input type="password" name="password" id="">
         <label>@error('password'){{$message}}@enderror</label>
-        <button type="submit" class="login">Đăng nhập</button>
-        <a href="/registerAccount" class="btn-reg">Đăng ký</a>
+        <button type="submit" class="login">SignIn</button>
+        <a href="/registerAccount" class="btn-reg">SignUp</a>
     </form>
  </div>
 @endsection

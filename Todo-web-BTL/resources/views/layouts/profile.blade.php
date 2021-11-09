@@ -32,6 +32,11 @@
     <title>Manager User TodoList</title>
 </head>
 <body>
+      <div class="back-video">
+        <video autoplay loop muted> 
+            <source src="/assets/4k.mp4" type="video/mp4">
+        </video>
+      </div>
      <div class="container">
        
       <div class="layout-main row justify-content-md-center">
@@ -45,17 +50,16 @@
           <div class="tab-control">
             <ul class="m-0 xxl">
               <li  id="user-info">
-                <a href="/profile">
+                <a href="/profile" style="text-decoration: none">
                   <span class="name-user">User Information</span>
                 </a>
               </li>
-                <a class="schedule" href="/schedule">
-                  <li id="user-schedule">
-                    <a href="/schedule">
-                      <span class="name-user">Schedule</span>
-                    </a>
-                  </li>
+              <li id="user-schedule">
+                <a href="/schedule" style="text-decoration: none">
+                  <span class="name-user">Schedule</span>
                 </a>
+              </li>
+
             </ul>
           </div>
           <div class="dentails-tab">
@@ -68,6 +72,17 @@
        
       </div>
     </div> 
-    
+    <style>
+       .back-video{
+        display: block;
+      
+        position: fixed;
+        z-index: -10;
+    }
+    video{
+        min-width: 100%;
+        max-height: 100%;
+    }
+    </style>
 </body>
 

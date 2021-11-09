@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\Schedule;
 
@@ -9,7 +10,7 @@ use App\Models\Schedule;
 class ScheduleUser extends Controller
 {
     //
-    function showSchedule(){
+    function showSchedule(Request $request, ){
       if(session()->has('acc')){
           // $schedule= DB::select('SELECT * FROM `schedule` WHERE `IDuser` = ?',[session()->get('iduser')]);
           $schedule = Schedule::where('IDuser','like',session('iduser'))->paginate(5);
@@ -32,9 +33,25 @@ class ScheduleUser extends Controller
         $schedulelist = Schedule::where('Nameschedule','like','%'.$req->key.'%')
                             ->Where('IDuser','=',session('iduser'))
                             ->get();
-        return view('searchuser',compact('schedulelist'));
+        return view('searchschedule',compact('schedulelist'));
         }
         else return redirect('schedule');
     }
+    function updateSchedule(Request $request){
+      if(session()->has('acc')){
+      $reqDt = array(
+        'Nameschedule'=>$request->schedule,
+        'Thoigian'=>$request->time
+      );
+      DB::table('schedule')->where('Idschedule',$request->id)->update($reqDt);
+      return redirect('/schedule');
+    }
+    }
+    function addSchedule(Request $request){
+      if(session()->has('acc')){
+      DB::insert('INSERT INTO `schedule` (`Nameschedule`, `Thoigian`,`IDuser`) values (?, ?, ?)', [$request->schedule, $request->time,session()->get('iduser')]);
+      return redirect('/schedule');
+    }
+  }
   
 }

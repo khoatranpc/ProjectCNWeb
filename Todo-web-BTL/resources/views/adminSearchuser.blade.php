@@ -35,9 +35,9 @@
                 <thead>
                   <tr>
                     <th scope="col">ID</th>
-                    <th scope="col">Họ tên</th>
-                    <th scope="col">Tài khoản</th>
-                    <th scope="col">SĐT</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Account</th>
+                    <th scope="col">NumberPhone</th>
                     <th scope="col">Email</th>
                   </tr>
                 </thead>
@@ -55,8 +55,8 @@
               </table>
           </div>
           <div class="footer-table" style=>
-            <strong>---Tìm thấy {{count($userinf)}} kết quả---</strong>
-            <span style="position: absolute; right: 0"><a href="/admin">Kết thúc tìm kiếm</a></span>
+            <strong>---Found {{count($userinf)}} results---</strong>
+            <span style="position: absolute; right: 0"><a href="/admin">End searching</a></span>
           </div>
         </div>
     </div>

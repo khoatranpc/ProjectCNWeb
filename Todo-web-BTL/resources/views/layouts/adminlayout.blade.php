@@ -26,7 +26,7 @@
         </div>
 
             <form action="{{route('searchuserinfor')}}" method="GET" style="display: flex">
-                <input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)" placeholder="Tìm kiếm theo tên, email" name="key">
+                <input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)" placeholder="Search by name or numberphone" name="key">
                 <button class="input-group-text">Tìm kiếm</button>
             </form>
             

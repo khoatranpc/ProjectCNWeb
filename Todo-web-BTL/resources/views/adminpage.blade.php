@@ -36,9 +36,9 @@
                 <thead>
                   <tr>
                     <th scope="col">ID</th>
-                    <th scope="col">Họ tên</th>
-                    <th scope="col">Tài khoản</th>
-                    <th scope="col">SĐT</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Account</th>
+                    <th scope="col">NumberPhone</th>
                     <th scope="col">Email</th>
                   </tr>
                 </thead>

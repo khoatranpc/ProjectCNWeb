@@ -1,11 +1,14 @@
 <?php
 
+use App\Http\Controllers\AddSchedule;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Login;
 use App\Http\Controllers\Admin;
 use App\Http\Controllers\Register;
 use App\Http\Controllers\InforUser;
+use App\Http\Controllers\ScheduleDetails;
 use App\Http\Controllers\ScheduleUser;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -92,5 +95,13 @@ Route::get('/schedule/details', function () {
 Route::get('/admin/searchuser',[Admin::class,'searchuser'])->name('searchuserinfor');
 //Schedule
 Route::get('/schedule', [ScheduleUser::class,'showSchedule']);
+Route::get('/delete/{idschedule}', [ScheduleUser::class,'deleteschedule']);
 Route::get('/schedule/delete/{idschedule}', [ScheduleUser::class,'deleteschedule']);
 Route::get('/schedule/searchschedule',[ScheduleUser::class,'searchschedule'])->name('searchschedule');
+//view schedule details hang
+Route::get('/schedule/details/{idschedule}',[ScheduleDetails::class,'takeSchedule'])->name('details');
+Route::post('/schedule/details',[ScheduleUser::class,'updateSchedule']);
+//Add schedule
+Route::get('/schedule/addschedule',[AddSchedule::class,'viewAddSchedule']);
+Route::post('/addschedule',[ScheduleUser::class,'addSchedule'])->name('addschedule');
+

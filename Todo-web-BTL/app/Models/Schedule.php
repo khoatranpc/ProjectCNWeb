@@ -10,4 +10,5 @@ class Schedule extends Model
     use HasFactory;
     protected $table='schedule';
     protected $primaryKey = 'Idschedule';
+
 }

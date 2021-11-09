@@ -22,8 +22,8 @@
                     <input type="text" class="form-control" placeholder="..." value="{{$inf->Hoten}}" readonly>
                   </div>
                   <div class="col">
-                    <label for="inputNationality">Nationality</label>
-                    <input type="text" class="form-control" placeholder="..." value="" readonly>
+                    <label for="inputNationality">Name account</label>
+                    <input type="text" class="form-control" placeholder="..." value="{{$inf->acc}}" readonly>
                   </div>
                 </div>
                 <div class="row">
